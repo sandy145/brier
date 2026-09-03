@@ -30,6 +30,7 @@ function readDb(): DbShape {
 }
 
 function writeDb(db: DbShape) {
+  mkdirSync(dirname(DB_PATH), { recursive: true });
   writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
 }
 
